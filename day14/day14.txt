@@ -1,0 +1,82 @@
+1.通过层次关系获取节点
+	1.parent()
+		获取父节点
+	2.parents('selector')
+		获取满足指定选择器的祖先元素,如果省略参数，返回所有祖先元素
+	3.children()/children('selector')
+		获取所有的直接子元素
+		获取所有满足选择器的直接子元素
+	4.find('selector')
+		获取满足选择器的后代元素,包含直接与间接
+		参数省略，查找不到
+	5.next()/next('selector')
+		获取下一个兄弟元素
+		获取下一个兄弟元素，要求满足selector，否则查找失败
+	6.prev()/prev('selector')
+		获取上一个兄弟元素
+		获取上一个兄弟元素，要求满足selector，否则查找失败
+	7.siblings()/siblings('selector')
+		获取所有兄弟元素
+		获取所有满足选择器的兄弟元素
+2.节点的创建，添加，删除
+	1.创建节点
+		语法1：
+			var $div = $('<div></div>');
+			$div.html();内容
+			$div.attr();属性
+			$div.css();样式
+		语法2：
+			var $h1 = $("<h1 id='d1' style='color:red;'>一级标题</h1>")
+	2.添加节点
+		1.作为子元素添加
+			$obj.append($new)
+				将$new 作为$obj的最后一个子元素添加
+			$obj.prepend($new)
+				将$new 作为$obj的第一个子元素添加
+		2.作为兄弟元素添加
+			$obj.after($new)
+				将$new作为$obj的下一个兄弟元素添加
+			$obj.before($new)
+				将$new作为 $obj的上一个兄弟元素添加
+		3.删除节点
+			$obj.remove();
+			删除$obj
+3.事件绑定
+	1.等待文档加载完毕
+		1.$(document).ready(function(){
+			//等待文档加载完毕后执行
+			});
+		2.$().ready(function(){
+			//等待文档加载完毕后执行
+			});
+		3.$(function(){
+			//等待文档加载完毕后执行
+			});
+		注意：
+			原生onload事件不能重复书写，会被覆盖，只执行最后一次onload书写的代码
+			jquery中的ready方法，可重复使用，函数从上至下一次执行，不会产生覆盖问题
+	2.事件绑定方式
+		1.$obj.bind('事件名称',function)
+			参数:
+				1.事件名称:省略on前缀
+				2.function:事件触发后,执行的操作
+			例：
+				$obj.bind('click',function(){});
+		2.$obj.事件名称(function)
+			事件名称作为方法名，直接绑定，省略on前缀
+			例：
+				$obj.click(function(){});
+	3.事件对象
+		事件对象的获取和属性操作与原生JS一致
+		例：
+			$obj.click(function(evt){
+				//获取时间对象(参数接收)
+				console.log(evt);
+				//属性访问
+				console.log(evt.offsetX);
+			})
+	4.遍历数组
+		each(function(){
+
+		});
+		遍历数组或集合,每取出一个元素，自动执行函数

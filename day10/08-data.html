@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		// 创建日期对象
+		var date1 = new Date();
+		var date2 = new Date('2012-10-10 20:21:22');
+		var date3 = new Date('2000/01/01');
+		console.log(date1);
+		console.log(date2);
+		console.log(date3);
+
+		var year = date1.getFullYear();
+		var month = date1.getMonth();
+		console.log(year,month);
+		var day = date1.getDate();
+		var week = date1.getDay();
+		var week2 = date2.getDay();
+		console.log(day,week,week2);
+
+		console.log(date1.toLocaleString());
+		console.log(date1.toLocaleDateString());
+
+		console.log(date1.toLocaleTimeString());
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

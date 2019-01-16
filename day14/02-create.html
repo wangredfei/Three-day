@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var $h1 = $("<h1 id='d1' style='color:red;'>一级标题</h1>");
+		var $p = $("<p></p>");
+		$p.html('段落标签').attr('class','c1').css('color','orange');
+		console.log($h1);
+		console.log($p);
+
+		// 将h1添加到body中
+		$('body').append($h1);
+		$('body').prepend($p);
+
+		var $span = $('<span>普通文本</span>');
+		var $a = $("<a href=''>超链接</a>");
+		$p.before($span);
+		$p.after($a);
+
+		// 删除
+		$span.remove();
+	</script>
+</body>
+</html>

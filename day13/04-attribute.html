@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+</head>
+<body>
+	<p id="d1" class="c1">床前明月光</p>
+	<p class="c2">地上鞋俩双</p>
+	<p class="c1">天王盖地虎</p>
+	<p>小鸡炖蘑菇</p>
+	<p class="c2s">地上鞋俩双</p>
+	<script type="text/javascript">
+		$('[id]').css('color','red');
+		$('[class=c1]').css('color','green');
+		$('[class^=c]').css('text-align','center');
+		$('[class$=1]').css('width','500px').css('background','orange');
+		$('[class*=2]').css('border','1px solid pink');
+		$('[id!="d1"]').css('color','cyan');
+	</script>
+</body>
+</html>

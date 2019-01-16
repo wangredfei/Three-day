@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+</head>
+<body>
+	<div id="box">
+		<h1>'名诗'俩首</h1>
+		<p id="d1" class="c1">床前明月光</p>
+		<p class="c2">地上鞋俩双</p>
+		<p class="c1">天王盖地虎</p>
+		<p>小鸡炖蘑菇</p>
+	</div>
+	<script type="text/javascript">
+		// 获取元素
+		console.log($('p'));
+		$('#d1').css('color','red');
+		$('.c1').css('background-color','orange');
+		$('h1,.c1').css('text-align','center');
+
+		// 相邻兄弟选择器
+		$('#d1+p').css('font-size','32px');
+		$('.c2~p').css('border','1px solid blue');
+	</script>
+</body>
+</html>

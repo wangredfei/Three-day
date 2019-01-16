@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		// 1.循环接收用户输入
+		var arr=[];
+		while(true){
+			var input = prompt('请输入数据');
+			if (input=='exit') {break;}
+
+			// length 表示数组中下一个元素的下标
+			arr[arr.length] = input;
+			}
+			console.log(arr);
+		// 2.求一组数据的最大值
+		var arr2=[110,34,656,76,87,-554,-1];
+		var max = arr2[0];
+		for (var i = 0;i < arr2.length; i++) {
+			if (arr2[i]>=max) {
+				// 更新max
+				max = arr2[i];
+			}
+		}
+		console.log(max);
+
+		// 3.for ... in ...遍历数组
+		for(var i in arr2){
+			console.log(i,arr2[i]);
+		}
+</script>
+</head>
+</body>
+</html>

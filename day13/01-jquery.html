@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-1.11.3.js">
+		
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script type="text/javascript">
+		// console.log($('div'));
+		var div = document.getElementsByTagName('div')[0];
+		// 转换jquery对象(变量名使用$前缀)
+		var $div = $(div);
+		console.log(div);
+		console.log($div);
+		// 获取jquery对象中原生的JS对象
+		console.log($div[0]);
+		console.log($div.get(0));
+
+		// 操作元素
+		div.innerHTML = '原生innerHTML书写';
+		div.setAttribute('id','d1');
+		
+		// jquery操作元素内容和属性
+		$('div').html('jquery动态添加');
+		$('div').attr('class','c1');
+
+		/*调用对象不存在的方法，报错
+		$('div').setAttribute('id','d1');*/
+
+		// 不起作用，不报错，访问对象不存在的属性
+		// $('div').innerHTML = "jquery";
+	</script>
+</body>
+</html>

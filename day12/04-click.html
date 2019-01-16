@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function $(tagName){
+			var elem = document.getElementsByTagName(tagName)[0];
+			return elem;
+		}
+	</script>
+</head>
+<body>
+	<h1 ondblclick="show()">一级标题</h1>
+	<script type="text/javascript">
+		function show() {
+			// body...
+			alert('dblclick');
+		}
+		$('h1').style.background = 'red';
+		$('h1').onmouseover = function(){
+			console.log('鼠标移入');
+		}
+		$('h1').onmousemove = function(){
+			console.log('鼠标移动');
+		}
+		$('h1').onmouseout = function(){
+			console.log('鼠标移出');
+		}
+	</script>
+</body>
+</html>

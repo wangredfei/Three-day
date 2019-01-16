@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function splitStr(){
+			var str = '101_5&201_10&301_20';
+			var arr = str.split('&');
+			for(var i=0;i<arr.length;i++){
+				var goodStr = arr[i];
+				var goodArr = goodStr.split('_');
+				console.log('商品ID为：'+goodArr[0],'商品数量为：'+goodArr[1]);
+			}
+		}
+		splitStr();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

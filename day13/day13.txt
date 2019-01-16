@@ -1,0 +1,161 @@
+jQuery
+1.介绍
+	jQuery 是JavaScript工具库，封装了一套定义好的方法，简化JS操作
+2.功能和优势：
+	1.简化DOM操作，简化样式操作
+	2.可以通过选择器直接获取元素和操作样式
+	3.简化事件处理
+	4.Ajax技术更加简便和完善
+	5.提供大量的特效或功能插件
+	6.允许自定义插件
+3.使用：
+	1.引入jQuery
+		<script src=""></script>
+		注意：引入操作必须在自定义的JS代码之前，否则无法使用jQuery语法
+	2.jQuery对象
+		对原生JS对象进行封装之后，称为jQuery对象原生对象调用原生方法
+		jQuery对象使用jQuery提供的方法，不能混用
+	3.工厂函数 - $()
+		用来获取元素对象
+		通过传递参数执行获取
+		参数为字符串格式，传入选择器名称/DOM对象
+		选择器：
+			"h1"
+			"#d1"
+			".c1"
+			"div h1"
+	4.jquery对象与DOM对象互相转换
+		1.DOM转jquery
+			通过$()封装JS对象，返回jquery对象
+			注：jquery对象使用$前缀，与原生对象区分
+		2.jquery转DOM
+			从jquery数组中取元素
+			var div = $div[0];
+			var div2 = $div.get(0);
+4.选择器
+	1.$()中可以接收选择器名称，作为参数，匹配并返回元素对象
+		返回值是一个包含若干jquery对象的数组
+			语法：$('selector');
+	2.选择器
+		1.基础选择器
+			id class tagName group
+			语法：
+				1.$('#id');
+				2.$('.className');
+				3.$('tagName');
+				4.$('selector1,selector2');
+		2.层级选择器
+			1.后代选择器
+				$('selector1 selector2')
+				包含直接与间接子元素
+			2.子代选择器
+				$('selector1>selector2');
+				匹配直接子元素
+			3.相邻兄弟选择器
+				$('selector1+selector2');
+				匹配下一个兄弟元素，满足selector2则返回，否则匹配失败
+			4.通用兄弟选择器
+				$('selector1~selector2');
+				匹配selector1后面所有满足selector2的兄弟元素
+		3.过滤选择器
+			需要结合其他选择器使用
+			1.	：first
+				例： $('p:first')	匹配第一个p元素
+			2.	：last
+				匹配最后一个元素
+			3.	:odd
+				匹配偶数行(奇数下标)
+			4.	：even
+				匹配奇数行对应的元素(偶数下标)
+			5.	：eq(index)
+					匹配下标为index的元素
+			6.	：lt(index)
+				匹配下标小于index的元素
+			7.	：gt(index)
+				匹配下标大于index的元素
+			8.	:not('selector1,selector2')
+				表示除了指定选择器以外剩余的元素
+		4.属性选择器[]
+			1.[attrName]
+				匹配包含指定属性的元素
+			2.[attrName=value]
+				匹配属性名等于指定属性值的元素
+			3.[attrName^=value]
+				匹配属性值以指定字符开头的元素
+			4.[attrName$=value]
+				匹配属性值以指定字符结尾的元素
+			5.[attrName*=value]
+				匹配属性值中包含指定字符集
+			6.[attrName!=value]
+				匹配属性名不等于属性值的元素
+		5.子元素过滤选择器
+			1.	：first-child
+				 匹配首个子元素
+			2.	：last-child
+				匹配最后一个子元素
+			3.	：nth-child(n)
+				匹配第n个子元素
+5.jquery 操作DOM
+	1.操作元素内容
+		html('')
+			设置或者读取标签内容，可识别标签语法，类似于原生JS中的
+			innerHTML
+		text('')
+			设置读取标签内容，不能识别标签语法，类似于innerText
+		val('')
+			设置或者读取表单控件的值，类似于原生value属性
+		练习：
+			创建文本框，按钮，div
+			点击按钮时，将文本框的输入内容以一级标题形式显示在div中
+			使用jquery完成
+	2.操作标签属性
+		1.attr('attrName','value')
+			设置或读取标签属性
+			例：
+				$('div').attr('id','d1');
+				console.log($('div').attr('id'));
+		2.prop('attrName','value')
+			property	设置或者读取标签属性
+			区分：
+				attr() prop()方法几乎一致，都表示属性操作
+				访问按钮checked属性时，取值不同
+				($('input').attr('checked');//checked='checked'
+				($('input').prop('checked');//checked= 'true'
+		3.removeAttr('attrName')
+			移出指定属性
+	3.操作元素样式
+		1.attr()/prop()
+			为元素添加id/class属性，对应选择器样式
+		2.操作类选择器
+			通过class属性值，结合选择器，修改样式
+			1.addClass('className')
+				为元素添加class属性值，可以反复调用，反复添加
+			2.removeClass('className')
+				移除指定的class属性值
+				省略参数，表示情况class属性值
+			3.toggleClass('className')
+				结合用户行为实现元素样式切换
+				元素存在指定className，就删除
+				不存在，则添加
+		3.操作行内样式
+			1.css('color')
+				获取指定的CSS属性值
+			2.css('color','red')
+				设置元素样式
+			3.css(JSON对象)
+				JSON对象：指定数据传输格式
+				使用：
+					1.使用{}表示JSON对象
+					2.CSS属性名和属性值都使用字符串表示
+					3.属性名与属性值之间使用：隔开
+					4.多组属性之间使用,隔开
+					例：
+						css({
+							'width':'200px',
+							'height':'200px',
+							'background-color':'red'
+						})
+
+
+
+

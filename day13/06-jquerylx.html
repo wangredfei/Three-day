@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+</head>
+<body>
+	<div></div>
+	<input type="text">
+	<button onclick="show()">点我</button>
+
+	<script type="text/javascript">
+		function show() {
+			var input = $('input').val();
+			$('div').html('<h1>'+input+'</h1>');
+		}
+	</script>
+</body>
+</html>

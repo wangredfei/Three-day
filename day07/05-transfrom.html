@@ -1,0 +1,46 @@
+<!-- 05-transfrom.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var r1 = 10 + 10;
+		var r2 = "10" + 10;//"1010"
+		var r3 = 5 + 10 + "10";//"1510"
+		var r4 = "10" + 5 + 10;//"10510"
+		var r5 = "10" + true;//"10true"
+		console.log(r1,r2,r3,r4,r5);
+		var r6 = 10 + true + "10";//"1110"
+		var r7 = '10' + undefined;
+		console.log(r6,r7);
+		var r8 = "10" + null;
+		console.log(r8);
+		var s1 = 10 + true;
+		console.log(s1);
+
+		var s2 = 10 + undefined;
+		var s3 = 10 + null;
+		console.log(s2,s3);
+		var s4 = true + true;
+		console.log(s4);
+
+		var a = 100;
+		var a1 = a.toString();
+		console.log(a,typeof a);
+		console.log(a1,typeof a1);
+
+		var b1 = Number("35.5");
+		var b2 = Number(true);
+		var b3 = Number('18a');
+		console.log(b1,b2,b3);
+
+		var b4 = parseFloat('1.5e3');
+		var b5 = Number('1.5e3');
+		console.log(b4,b5);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

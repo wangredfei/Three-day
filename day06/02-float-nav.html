@@ -1,0 +1,53 @@
+<!-- 02-float-nav.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+		#nav,#main{
+			width: 540px;
+			margin: 0 auto;
+		}
+		#main{
+			height: 500px;
+			background-color: orange;
+		}
+		#nav{
+			background-color: green;
+			/*height: 50px;*/
+			/*overflow: hidden;*/
+		}
+		#nav a{
+			float: left;
+			width: 100px;
+			height: 50px;
+			background-color: red;
+			text-align: center;
+			margin-right: 10px; 
+			line-height: 50px;
+		}
+		#nav .no-margin{
+			margin: 0;
+		}
+		#nav .clear{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div id="nav">
+		<a href="">淘宝</a>
+		<a href="">天猫</a>
+		<a href="">京东</a>
+		<a href="">苏宁</a>
+		<a href="">苏苏</a>
+		
+		
+	</div>
+	<div id="main"></div>
+	<div class="no-margin"></div>
+	<div class="clear"></div>
+</body>
+</html>

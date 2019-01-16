@@ -1,0 +1,53 @@
+<!-- 09-while-data.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	
+	<script type="text/javascript">
+		var year = Number(prompt("请输入年"));
+		var month = Number(prompt("请输入月"));
+		var day = Number(prompt("请输入日"));
+
+		//总天数
+		var sumDay = 0;
+		//判断闰年
+		var isRun = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+		//整月天数的累加
+		var i = 1;
+		while(i<month){
+			switch(i){
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+					sumDay +=31;
+					break;
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					sumDay += 30;
+					break;
+				case 2:
+					sumDay +=28;
+					if (isRun) {
+						sumDay += 1;
+					}
+					break;
+			}
+			// 更新循环变量
+			i++;
+		}
+		// 
+		sumDay += day;
+		console.log(year + "年" + month +"月"+day+"日是当年的第" + sumDay + "天");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

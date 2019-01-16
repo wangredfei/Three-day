@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var num =Number(prompt('请输入数字'));
+		// 除2取余，直至商为0
+		var arr=[];
+		while(num != 0){
+			arr.unshift(num % 2);
+			num = parseInt(num / 2);
+		}
+		console.log(arr.join(''));
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

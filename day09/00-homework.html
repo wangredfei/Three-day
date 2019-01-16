@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		// 1.素数
+		// var num = prompt('请输入一个数字');
+		// var isSu = true;
+		// // 只能被1和自身整除
+		// for(var i = 2 ;i<num;i++){
+		// 	if (num%i==0) {
+		// 		isSu = false;
+		// 		break;
+		// 	}
+		// }
+		// if (isSu) {
+		// 	console.log(num+'是素数')
+		// }else{
+		// 	console.log(num+'不是素数')
+		// }
+		
+
+
+		//2.算日期
+		//1.年月日
+		// var year = Number(prompt('请输入年'));
+		// var month = Number(prompt('请输入月'));
+		// var day = Number(prompt('请输入日'));
+
+		// var sumDay = 0;
+		// //2.计算距离1990年1月1日间隔的总天数
+		// //3.整年的累加
+		// for(var i = 1990;i<year;i++){
+		// 	sumDay += 365;
+		// 	if (i%400==0 || (i%4==0 && i%100 !=0)) {
+		// 		sumDay += 1;
+		// 	}
+		// }
+		// //4.当年整月的累加
+		// for(var j=1;j<month;j++){
+		// 	switch(j){
+		// 		case 1:
+		// 		case 3:
+		// 		case 5:
+		// 		case 7:
+		// 		case 8:
+		// 		case 10:
+		// 			sumDay += 31;
+		// 			break;
+		// 		case 4:
+		// 		case 6:
+		// 		case 9:
+		// 		case 11:
+		// 			sumDay += 30;
+		// 			break;
+		// 		case 2:
+		// 			sumDay += 28;
+		// 			if (year%400==0 || (year%4==0 && year%100 != 0)) {
+		// 				sumDay +=1;
+		// 			}
+		// 			break;
+		// 	}
+		// }
+		// // 5.累加当前月的天数
+		// sumDay += day;
+		// // 6.判断星期
+		// var week = sumDay % 7;
+		// var show ='';
+		// switch(week){
+		// 	case 0:
+		// 		show='周日';
+		// 		break;
+		// 	case 1:
+		// 		show='周一';
+		// 		break;
+		// 	case 2:
+		// 		show='周二';
+		// 		break;
+		// 	case 3:
+		// 		show='周三';
+		// 		break;
+		// 	case 4:
+		// 		show='周四';
+		// 		break;
+		// 	case 5:
+		// 		show='周五';
+		// 		break;
+		// 	case 6:
+		// 		show='周六';
+		// 		break;
+		// }
+		// console.log(year+'年'+month+'月'+day+'日是'+show);
+		
+		// 三，星星图案
+		//1.行数与星星个数相等
+		// for(var i=1;i<6;i++){
+		// 	var show = '';
+		// 	// 星星逐个打印
+		// 	for(var j=1;j<=i;j++){
+		// 		// 内层循环打印当前行的星星数
+		// 		show += '*';
+		// 	}
+		// 	console.log(show);
+		// }
+		// console.log('----------------------------------')
+		// // 2.星星图案
+		// for(var i = 1;i<6;i++){
+		// 	var show = '';
+		// 	// 空格
+		// 	for(var j=1;j<=5-i;j++){
+		// 		show += ' ';
+		// 	}
+		// 	// 星星
+		// 	for(var k=1;k<=2*i-1;k++){
+		// 		show += '*';
+		// 	}
+		// 	console.log(show);
+		// }
+		// 
+		
+		// 四。乘法表
+		for(var i=1;i<=9;i++){
+			var show='';
+			for(j=1;j<=i;j++){
+				show += j+'*'+i+'='+j*i+'\t';
+			}									
+			console.log(show);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

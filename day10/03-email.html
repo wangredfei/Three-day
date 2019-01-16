@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+
+		function subMail(){
+			var mail = 'zhangsan@163.com';
+			var atIndex = mail.indexOf('@');
+			// 截取
+			var userName = mail.substring(0,atIndex);
+			var serverName = mail.substring(atIndex+1);
+			console.log('用户名：'+userName,'服务商'+serverName);
+		}
+		// subMail();
+		
+		function subDate(){
+			var cardID = '412326199809020939';
+			var year = cardID.substring(6,10);
+			var month = cardID.substring(10,12);
+			var day = cardID.substring(12,14);
+			console.log(year,month,day);
+		}
+		subDate();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

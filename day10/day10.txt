@@ -1,0 +1,209 @@
+day10.txt
+1.字符串 String
+	1.创建语法
+		var s1='100';
+		var s2 = new String('hello');
+		var s3 = String('hi');
+		注:内置对象类型，创建时可以省略new关键字
+	2.属性：
+		length:获取字符串长度(字符个数)
+		注：字符串采用类数组结构存储每一个字符，自动为每位字符分配下标,默认0开始
+	3.方法
+		1.英文转换大小写
+			1.toUpperCase()
+				将字符串中的字母转换大写
+			2.toLowerCase()
+				将字母转小写
+			返回：转换后的字符串，不会影响原始字符串
+		2.获取字符
+			1.charAt(index)
+				获取指定下标的字符
+			2.charCodeAt(index)
+				获取指定下标的字符Unicode码
+			3.检索字符(获取指定字符的下标)
+				1.indexOf(value,fromIndex)
+					作用：获取指定字符的下标
+					返回：下标,从指定位置(默认0开始)，向后查找，返回第一次匹配成功的下标
+					参数：
+						1.value ：指定字符或字符串(必填)
+						2.fromIndex：默认为0，表示从哪一个下标开始向后查找(选填)
+				2.lastIndexOf(value,fromIndex)
+					作用：获取指定字符(串)，最后一次出现的下标位置
+					参数：
+						1.value ：指定字符或字符串
+						2.fromIndex：指定起始下标(选填)
+					注意：lastIndexOf，根据给出的起始位置，
+					从后向前查找字符，找到即返回下标
+			4.截取字符串
+				substring(startIndex,endIndex);
+				作用：根据指定的下标范围，截取字符串并返回
+				参数：指定截取范围[startIndex,endIndex),endIndex可以省略，表示截至末尾
+			5.分割字符串
+				split(seperator);
+				作用：根据指定的分隔符，分割字符串
+				返回：数组，存放分割后的每个字符串
+				参数：指定分割符，如果字符串中不包含指定的字符，字符串不会被分割，仍然会返回数组
+			6.模式匹配
+				1.作用：结合正则表达式实现指定字符串的查找和替换
+				2.正则表达式：
+					1.语法：
+						/正则格式/修饰符
+						修饰符：
+							i : ignorecase 忽略大小写
+							g : global 全局匹配
+						例：
+							var reg1 = /微软/g;
+							var reg2 = /\d{2,6}/;
+				3.字符串方法
+					1.match(regExp/subStr);
+						参数：可以使用正则表达式表示字符串格式，或者直接使用字符串
+						作用：查找字符串中所有满足正则格式或给定字符要求的内容
+						返回：数组，存放查找到的所有字符串
+					2.replace(regExp/subStr,newStr)
+						作用：根据指定字符或正则查找字符串中相应内容，并替换为newStr
+2.正则表达式对象 RegExp
+	1. RegExp:Regular Expression
+		制定字符串的组成模式
+	2.创建：
+		1.var reg1  = /正则格式/修饰符;
+		2.var reg2 = new RegExp('正则格式','修饰符');
+		3.属性和方法
+			1.属性：lastIndex
+				可读可写，表示下一次匹配的起始下标
+			2.test(param)
+				验证字符串中是否存在满足正则格式的内容，返回布尔值，参数为要验证的字符串
+3.Math 对象
+	1.Math对象提供一系列数学方法
+	2.属性
+		数学常量：
+			Math.PI 表示圆周率3.14或者度数180度
+			Math.E  自然对数
+	3.方法
+		1.三角函数
+			Math.sin(x) 求正弦，参数为角度值
+			Math.cos(x)
+			Math.tan(x)
+			注：可以借助于Math.PI进行角度转换
+			例：PI/3
+		2.计算函数 
+			Math.sqrt(x) 开平方
+			Math.pow(x,y) 求x的y次方
+			Math.log(x)   求对数
+		3.数值函数
+			Math.abs(x) 求绝对值
+			Math.max(a,b,c) 求数据最大值
+			Math.min(a,b,c)
+			Math.random() 
+			Math.ceil(x) 对x向上取整
+			Math.floor(x) 向下取整
+			Math.round(x) 四舍五入
+4.Data 日期对象
+	1.操作日期与时间
+		var date1 = new Date();
+	2.创建指定日期时间的对象
+		var date2= new Date('2012/12/12 10:10:10');
+	3.方法
+		1.getTime()
+			读取当前日期对象距离1970-01-01 00:00:00 之间间隔的毫秒数
+		2.读取时间分量
+			1.getFullYear()
+				获取当前日期对象的年份
+			2.getMonth()
+				获取当前日期对象的月份,返回0-11表示12个月，需要进行+1处理
+			3.getDate()
+				获取当前对象的日期信息
+			4.getDay()
+				获取当前对象的星期数,取值0-6，对应周日-周六
+			5.getHours()
+				获取小时数
+			6.getMinutes()
+				获取分钟
+			7.getSeconds()
+				获取秒数
+			8.getMillisecondes()
+				获取毫秒数
+		3.转换日期格式
+			1.toLocaleString()
+				以本地格式显示日期时间
+			2.toLocaleDateString()
+				本地各式显示日期
+			3.toLocaleTimeString()
+				本地格式显示时间
+外置对象
+1.BOM
+	1.浏览器对象模型：提供与浏览器交互的对象，
+		核心对象是window(窗口)
+		window 由浏览器在打开页面时自动创建，可以直接访问
+	2.window 包含的属性和方法：
+		1.属性：
+			history screen location document navigator
+			以上属性都是对象类型，包含自身属性和方法
+		2.方法
+			alert(str);
+			prompt(str);
+			confirm(str); 确认框，参数为提示文本，自带确认和取消俩个按钮，点击确认
+			返回true 点击取消返回false
+			window.close();	关闭当前窗口
+
+			定时器方法
+
+		3.使用
+			1.可以省略window对象，直接访问相关属性和方法
+				window.alert();
+				window.document.write();
+			2.所有的全局变量和全局函数，都是window对象的属性和方法
+				练习：
+					使用确认框，询问用户是否要关闭当前窗口；
+					如果点击确定，关闭窗口
+					window.close();
+			3.定时器方法
+				1.周期性定时器(间歇调用)
+					1.根据指定的时间间隔，不断调用相关代码
+					2.语法：
+						1.开启
+							setInterval(func,interval);
+							参数：
+								1.func:需要间歇调用的代码段
+								2.时间间隔，默认以毫秒为单位
+							返回：定时器的ID
+						2.关闭 clearInterval(timerID);
+
+
+				2.一次性定时器(超时调用)
+					1.在指定的时间间隔之后，执行一次代码
+					2.语法
+						开启：
+							var timerID = setTimeout(func,interval);
+						关闭：
+							clearTimeout(timerID);
+			4.属性
+				1.大部分window对象的属性，又是对象类型，包含自身的属性和方法
+					例：document screen location history
+				2.screen 屏幕对象‘
+					保存与屏幕相关的信息
+					属性：
+						width/height：获取屏幕的宽高
+						availWidth/availHeight:实际可用的屏幕宽高(减去任务栏之后的尺寸)
+				3.history
+					保存当前窗口访问过的URL信息
+					属性：
+						length 获取当前窗口访问过的url数量
+					方法：
+						back():相当于浏览器的后退按钮
+						forward():前进按钮
+						go(num):参数可正可负，正值代表前进，负值代表后退
+					注意：
+						1.方法使用时，都是从当前页面在history中的位置开始，前进或者后退
+						2.窗口的历史记录数量，跟随url变化自动添加，访问顺序决定历史记录顺序
+							重复切换页面不会影响历史记录的顺序和数量
+				4.location
+					操作当前窗口地址栏的信息
+					属性：
+						href：用来获取或设置当前窗口地址栏URL信息，如果赋值，页面重定向，发生内容跳
+					方法：
+						reload(param)
+						重载页面，相当于刷新
+						参数：true/false
+							默认false，从缓存中重载页面
+							true从服务器根目录重新请求页面
+2.DOM

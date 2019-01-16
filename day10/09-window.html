@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		console.log(window);
+		// window自带的方法
+		window.alert('window.alert');
+		prompt('请输入');
+		//确认框 参数为提示文本， 自带确认和取消按钮
+		//只有点击确认时，返回true，取消返回false
+		var isClose = window.confirm('是否关闭');
+		console.log(isClose);
+		// 2.全局变量和全局函数式window的属性和方法
+		var a = 100;
+		function f1(){
+			console.log('f1');
+		}
+		console.log(window.a);
+		window.f1();
+		console.log(window);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

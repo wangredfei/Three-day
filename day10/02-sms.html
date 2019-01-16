@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		// 随机验证码
+		// 1.数据源
+		// var arr = [0,1,2,3,4,5,6,7,8,9,'a','b','c','A','B','C','D'];
+		// var show='';
+		// // 2.随机验证码
+		// for(i=1;i<5;i++){
+		// 	// 随机下标
+		// 	var index = parseInt(Math.random()*arr.length);
+		// 	show += arr[index];
+		// }
+		// // 3.提示用户输入
+		// var input = prompt('请输入验证码:'+show);
+		// // 4.验证
+		// if(show.toUpperCase()==input.toUpperCase()){
+		// 	alert('输入正确');
+		// }else{
+		// 	alert('输入错误');
+		// }
+
+		// 封装成函数
+		function createCode(lens){
+		var arr = [0,1,2,3,4,5,6,7,8,9,'a','b','c','A','B','C','D'];
+		var show='';
+		// 2.随机验证码
+		for(i=1;i<=lens;i++){
+			// 随机下标
+			var index = parseInt(Math.random()*arr.length);
+			show += arr[index];
+		}
+		return show;
+	}
+		function validateCode(){
+			// 1.生成验证码
+			var code = createCode(6);
+			// 2.提示用户输入
+			// 3.提示用户输入
+			var input = prompt('请输入验证码:'+code);
+			// 4.验证
+			if(code.toUpperCase()==input.toUpperCase()){
+				alert('输入正确');
+			}else{
+				alert('输入错误');
+			}
+			// 3.验证
+		}
+	</script>
+</head>
+<body>
+	<button onclick="validateCode();">随机验证码</button>
+</body>
+</html>

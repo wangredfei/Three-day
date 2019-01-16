@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>表单控件只有写在form里才会跟随提交按钮发送到后台</h1>
+	<form action="login" method="get" enctype="">
+		<p>用户名称:
+			<input type="text" name="username" maxlength="11" placeholder="请输入用户名" autocomplete="off">
+		</p>
+		<p>
+			用户密码:
+			<input type="password" name="upwd" maxlength="8" placeholder="请输入密码">
+		</p>
+		<p>
+			用户性别:
+			<input id="male" type="radio" name="sex" value="male" checked>
+			<label for="male">男</label>
+			<input id="female" type="radio" name="sex" value="female">
+			<label for="female">女</label>
+		</p>
+		<p>
+			用户爱好:
+			<input type="checkbox" name="hobby" value="smoke">抽烟
+			<input type="checkbox" name="hobby" value="drink">喝酒
+			<input type="checkbox" name="hobby" value="hothair">烫头
+		</p>
+		<input type="hidden" name="uid" value="001">
+		<p>
+			用户头像:
+			<input type="file" name="uimg">
+		</p>
+		<p>
+			用户地址:
+			<select name="address">
+				<option value="beijing" >北京</option>
+				<option value="shanghai">上海</option>
+				<option value="guangzhou" selected>广州</option>
+			</select>
+		</p>
+		<p>
+			个人介绍:
+			<textarea name="uinfo"></textarea>
+		</p>
+		<input type="submit">
+		<input type="reset">
+		<input type="button" value="点击">
+		<button>button标签</button>
+	</form>
+	<button>button</button>
+</body>
+</html>

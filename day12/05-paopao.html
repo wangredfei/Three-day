@@ -1,0 +1,58 @@
+<!-- 05-paopao.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			console.log($('h1'));
+			var form = $('form');
+			var uname = $('input');
+			uname.onfocus = function(){
+				console.log('获取焦点');
+			};
+			uname.onblur=function(){
+				console.log('失去焦点');
+			};
+			uname.oninput = function(){
+				// this 永远指代当前函数或者方法的调用者
+				// console.log(this.value);
+			};
+			uname.onchange = function(){
+				console.log('onchange:',this.value);
+			};
+			// 点击提交按钮时，自动触发
+			form.onsubmit = function(){
+				// 判断输入框内容是否为空
+				if (uname.value.length == 0) {
+					return false;
+				}else{
+					return true;
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<div>
+		<h1>一级标题</h1>
+	</div>
+	<form action="login" method="" enctype="">
+		<input type="text" name="uname">
+		<input type="submit" value="注册">
+	</form>
+	<script type="text/javascript">
+		/*$('h1').addEventListener('click',function () {
+			alert('h1被点击');
+		},true);
+		$('div').addEventListener('click',function(){
+			alert('div被点击');
+		},true);
+		document.body.addEventListener('click',function(){
+			alert('body被点击');
+		},true);*/
+	</script>
+</body>
+</html>

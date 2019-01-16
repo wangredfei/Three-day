@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<p>1</p>
+	<p>2</p>
+	<p id="d3">3</p>
+	<script type="text/javascript">
+		var div = document.createElement('div');
+		div.id = 'box';
+		div.innerHTML = '动态创建的div';
+		// 创建文本节点
+		var text = document.createTextNode('文本节点添加内容');
+		div.appendChild(text);
+
+		console.log(div);
+		// // body是文档中唯一元素节点，作为document的属性存在
+		document.body.appendChild(div);
+		console.log(document);
+
+		// 创建h1
+		var h1 = document.createElement('h1');
+		h1.innerHTML = '一级标题';
+		document.body.insertBefore(h1,div);
+		div.appendChild(h1);
+		// 删除节点
+		div.removeChild(h1);
+		var p = document.getElementById('d3');
+		p.parentNode.removeChild(p);
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		// 3.三个数组数比较排序
+		var arr = [45,35,77];
+		if (arr[0]>arr[1]) {
+			// 互换数据
+			arr[0] = arr[0]^arr[1];
+			arr[1] = arr[0]^arr[1];
+			arr[0] = arr[0]^arr[1];
+		}
+		if (arr[1]>arr[2]) {
+			//互换位置
+			arr[1] = arr[1]^arr[2];
+			arr[2] = arr[1]^arr[2];
+			arr[1] = arr[1]^arr[2];
+		}
+		if (arr[0]>arr[1]) {
+			// 互换数据
+			arr[0] = arr[0]^arr[1];
+			arr[1] = arr[0]^arr[1];
+			arr[0] = arr[0]^arr[1];
+		}
+		console.log(arr);
+		function findindex(){
+			var arr = [12,34,56,32,54,76,54,0,12,0,34];
+			var input= prompt('请输入数据');
+			var index = -1;
+			for(var i in arr){
+				if (arr[i] ==input) {
+					index = i;
+					break;
+				}
+			}
+			if (index == -1) {
+				console.log('数据不存在');
+			}else{
+				console.log(input+'对应的下标为'+index);
+			}
+		}
+	</script>
+</head>
+<body>
+	<button onclick="findindex();">查找数据</button>
+</body>
+</html>

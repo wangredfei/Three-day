@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+		<script type="text/javascript" src="jquery-1.11.3.js"></script>
+</head>
+<body>
+	<div id="box">
+		<h1 class="c1">box中的h1</h1>
+		<div class="left">
+			<h1>一级标题</h1>
+			<p>段落内容</p>
+		</div>
+		<a href="">超链接</a>
+	</div>
+	<script type="text/javascript">
+		//获取父元素
+		console.log($('h1').parent());
+		console.log($('h1').parents('#box'));
+		// 获取子元素
+		console.log($('#box').children());
+		console.log($('.left').children('h1'));
+		//获取后代元素
+		console.log($('#box').find('h1'));
+		// 获取兄弟元素
+		console.log($('.c1').next('a'));
+		console.log($('a').prev());
+		console.log($('a').prev('.c1'));//0
+
+		console.log($('.left').siblings());
+
+	</script>
+</body>
+</html>

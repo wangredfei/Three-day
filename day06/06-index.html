@@ -1,0 +1,41 @@
+<!-- 06-index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+		}
+		.c1{
+			background-color: red;
+			position: relative;
+			top: 100px;
+			left: 100px;
+			/*z-index: 1;*/
+		}
+		.c2{
+			background-color: blue;
+			position: relative;
+		}
+		.c1:hover{
+			z-index:5;
+		}
+		#box{
+			width: 500px;
+			height: 500px;
+			background-color: pink;
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="c1"></div>
+		<div class="c2"></div>
+	</div>
+
+</body>
+</html>

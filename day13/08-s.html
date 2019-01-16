@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+		<script type="text/javascript" src="jquery-1.11.3.js"></script>
+		<style type="text/css">
+			#d1{
+				color: red;
+			}
+			.c1{
+				color: green;
+			}
+			.c2{
+				background: pink;
+			}
+		</style>
+</head>
+<body>
+	<h1>一级标题</h1>
+	<p>段落</p>
+	<h2>二级标题</h2>
+	<span>文本span</span>
+	<div>文本</div>
+
+	<button onclick="toggleStyle()">toggle</button>
+
+	<script type="text/javascript">
+		$('h1').attr('id','d1');
+		$('p').prop('class','c1 c2');
+		$('h2').addClass('c1');
+		$('h2').addClass('c2');
+
+		$('span').addClass('c1 c2');
+
+		$('span').removeClass('c1');
+		$('h2').removeClass();
+
+		function toggleStyle() {
+			$('h2').toggleClass('c1 c2');
+		}
+		$('div').css({
+			'width':'200px',
+			'height':'200px',
+			'background':'red',
+			'text-align':'center',
+			'line-height':'200px',
+			'margin':'0 auto'
+		})
+	</script>
+</body>
+</html>

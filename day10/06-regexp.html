@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var reg1 = /^\d{6}/g;
+		var reg2 = new RegExp('\\d{6}','ig');
+		console.log(reg1,reg2);
+		var str1 = '1234567';
+		var str2 = 'abc34567890';
+		var r1 = reg2.test(str2);
+		reg2.lastIndex = 0;
+		console.log(r1,reg2.lastIndex);
+		var r2 = reg2.test(str2);
+		console.log(r2,reg2.lastIndex);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

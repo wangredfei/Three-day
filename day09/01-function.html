@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function f1(){
+			alert('f1');
+		}
+		f1();
+		// 带参数无返回值的函数
+		// 参数：函数体执行所需要的数据
+		// 形参：变量名
+		// 实参：具体的数据
+		// 函数调用时，传参，给函数形参变量赋值的过程
+		function f2(x,y){
+			var res = x * x + y * y
+			alert('x(2) + y(2)'+res);
+		}
+		f2(3,4);
+		// 带返回值的函数
+		function sum(a,b){
+			return a+b
+		}
+		var r =sum(199,299);
+		console.log(r);
+		// 函数带有返回值，外界调用时，可以选择接收
+			
+		var fun = function(){
+			alert('fun');
+		};
+		fun();
+
+
+		(function (a) {
+			// body...
+			alert('匿名函数'+a)
+		})('hello');
+	</script>
+</head>
+<body>
+
+</body>
+</html>

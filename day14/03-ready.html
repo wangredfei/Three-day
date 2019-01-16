@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		// window.onload = function () {
+		// 	alert('第一次');
+		// }
+		// window.onload = function () {
+		// 	alert('第二次');
+		// }
+		// window.onload = function () {
+		// 	alert('第三次');
+		// }
+		$(document).ready(function(){
+			// alert('第一次');
+		});
+		$().ready(function(){
+			// alert('第二次');
+		});
+		$(function(){
+			// alert('第三次');
+			function show(evt){
+				alert('show');
+			}
+			$('h1').bind('click',show);
+			$('p').click(function(evt){
+				console.log(evt.offsetX,evt.offsetY);
+			});
+
+		});
+
+	</script>
+</head>
+<body>
+	<h1>一级标题</h1>
+	<p style="border: 1px solid blue;">段落内容</p>
+</body>
+</html>

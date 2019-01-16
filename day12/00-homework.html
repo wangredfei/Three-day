@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<input type="text" name="uname">
+	<span></span>
+	<br>
+	<button onclick="validateName()">验证</button>
+
+	<script type="text/javascript">
+		function validateName() {
+			// body...
+			var text = document.getElementByName('uname')[0].value;
+			var span = document.getElementsByTagName('span')[0];
+			
+			if (text.length>=6 && text.length<=18) {
+				span.innerText = '用户名合法';
+				span.style.color = 'orange';
+			}else{
+				span.innerText = '用户名不合法';
+				span.style.color = 'red';
+			}
+
+		}
+	</script>
+</body>
+</html>

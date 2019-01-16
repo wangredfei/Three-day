@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var str = '上知乎，搜知乎，问知乎，答知乎';
+		var arr1 = str.match('知乎');
+		console.log(arr1);
+
+		// 创建正则表达式
+		var reg1 = /知乎/g;
+		var arr2 = str.match(reg1);
+		console.log(arr2);
+
+		var res = str.replace(reg1,'达内');
+		console.log(res,str);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

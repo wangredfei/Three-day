@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var i = 0;
+		var timerID = setInterval(function (){
+			i++;
+			console.log(i);
+			if (i==5) {
+				clearInterval(timerID);
+			}
+		},1000);
+
+		setTimeout(function(){
+			console.log('超时调用，只执行一次')
+		},3000);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
